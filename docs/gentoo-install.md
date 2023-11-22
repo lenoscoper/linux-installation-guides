@@ -36,7 +36,7 @@ parted -a optimal /dev/sdX
 ( mkpart primary 1 513 )
 ( name 1 bios_grub )
 ( set 1 bios_grub on )
-( mkpart [rimary 513 1537 )
+( mkpart primary 513 1537 )
 ( name 2 boot )
 ( set 2 BOOT on )
 ( mkpart primary 1537 -1 )
