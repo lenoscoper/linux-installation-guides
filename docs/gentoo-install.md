@@ -50,9 +50,9 @@ parted -a optimal /dev/sdX
 ```bash
 mkfs.vfat /dev/sdX1
 mkfs.ext4 -T small -L "boot" /dev/sdX2
-cryptsetup -v -y -c aes-xts -s 512 -h sha512 -i 5000 --use-random luksFormat /dev/sda3
-cryptsetup luksDump /dev/sda3
-cryptsetup luksOpen /dev/sda3 GentooPC
+cryptsetup -v -y -c aes-xts-plain64 -s 512 -h sha512 -i 5000 --use-random luksFormat /dev/sdX3
+cryptsetup luksDump /dev/sdX3
+cryptsetup luksOpen /dev/sdX3 GentooPC
 pvcreate /dev/mapper/GentooPC
 pvdisplay
 vgcreate gentoo /dev/mapper/GentooPC
